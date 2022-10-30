@@ -21,7 +21,6 @@ def fetcher():
         '2': 'NetworkIn_Average',
         '3': 'NetworkOut_Average',
         '4': 'MemoryUtilization_Average',
-        '5': 'Final_Target'
     }
     rfw_id = request.json['r_id']
     benchmark_type = request.json['benchmark_type']
@@ -63,7 +62,7 @@ def fetcher():
         '95p': len([i for i in row if i >= round(np.percentile(row, 90), 2)]),
         '99p': len([i for i in row if i >= round(np.percentile(row, 99), 2)]),
     }
-    
+
     print(analytics)
 
     final = [row[i * int(batch_unit):(i + 1) * int(batch_unit)] for i in

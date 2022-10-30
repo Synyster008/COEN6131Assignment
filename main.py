@@ -15,7 +15,6 @@ metric = {
     '2': 'NetworkIn_Average',
     '3': 'NetworkOut_Average',
     '4': 'MemoryUtilization_Average',
-    '5': 'Final_Target'
 }
 
 rfw_id = input("RFW ID :\n")
@@ -71,7 +70,7 @@ print(analytics)
 final = [row[i * int(batch_unit):(i + 1) * int(batch_unit)] for i in
          range((len(row) + int(batch_unit) - 1) // int(batch_unit))]
 
-response = {'RFW ID': rfw_id, 'Last batch ID': initial + int(batch_size) - 1, 'Requested data': final,
+response = {'RFW ID': rfw_id, 'Last batch ID': initial + int(batch_size) - 1, 'Requested data': row,
             'Analytics': analytics}
 
 json_format = json.dumps(response)

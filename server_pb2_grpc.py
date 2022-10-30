@@ -18,7 +18,7 @@ class AnalyserStub(object):
         self.SendRequest = channel.stream_stream(
                 '/analyse.Analyser/SendRequest',
                 request_serializer=server__pb2.RequestInfo.SerializeToString,
-                response_deserializer=server__pb2.RequestReply.FromString,
+                response_deserializer=server__pb2.Response.FromString,
                 )
 
 
@@ -39,7 +39,7 @@ def add_AnalyserServicer_to_server(servicer, server):
             'SendRequest': grpc.stream_stream_rpc_method_handler(
                     servicer.SendRequest,
                     request_deserializer=server__pb2.RequestInfo.FromString,
-                    response_serializer=server__pb2.RequestReply.SerializeToString,
+                    response_serializer=server__pb2.Response.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -65,6 +65,6 @@ class Analyser(object):
             metadata=None):
         return grpc.experimental.stream_stream(request_iterator, target, '/analyse.Analyser/SendRequest',
             server__pb2.RequestInfo.SerializeToString,
-            server__pb2.RequestReply.FromString,
+            server__pb2.Response.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

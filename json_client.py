@@ -17,7 +17,8 @@ result = requests.get("http://192.168.2.18:5000/fetcher?",
                          "batch_unit": batch_unit,
                          "batch_id": batch_id,
                          "batch_size": batch_size,
-                         "file_type": file_type}
+                         "file_type": file_type}, 
+                         timeout=600
                       )
 if result.status_code == 200:
     print(" RFW_ID: ", result.json()['RFW ID'])

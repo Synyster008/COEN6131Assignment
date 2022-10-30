@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cserver.proto\x12\x07\x61nalyse\"\x88\x01\n\x0bRequestInfo\x12\x0e\n\x06rfw_id\x18\x01 \x01(\t\x12\x16\n\x0e\x62\x65nchmark_type\x18\x02 \x01(\t\x12\x17\n\x0fworkload_metric\x18\x03 \x01(\t\x12\x12\n\nbatch_unit\x18\x04 \x01(\t\x12\x12\n\nbatch_size\x18\x05 \x01(\t\x12\x10\n\x08\x62\x61tch_id\x18\x06 \x01(\t\"`\n\x0cRequestReply\x12\x0e\n\x06rfw_id\x18\x01 \x01(\t\x12\x15\n\rlast_batch_id\x18\x02 \x01(\t\x12\x16\n\x0erequested_data\x18\x03 \x01(\t\x12\x11\n\tanalytics\x18\x04 \x01(\t2J\n\x08\x41nalyser\x12>\n\x0bSendRequest\x12\x14.analyse.RequestInfo\x1a\x15.analyse.RequestReply(\x01\x30\x01\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0cserver.proto\x12\x07\x61nalyse\"\x99\x01\n\x0bRequestInfo\x12\x0c\n\x04r_id\x18\x01 \x01(\t\x12\x16\n\x0e\x62\x65nchmark_type\x18\x02 \x01(\t\x12\x17\n\x0fworkload_metric\x18\x03 \x01(\t\x12\x12\n\nbatch_unit\x18\x04 \x01(\x05\x12\x12\n\nbatch_size\x18\x05 \x01(\x05\x12\x10\n\x08\x62\x61tch_id\x18\x06 \x01(\x05\x12\x11\n\tfile_type\x18\x07 \x01(\t\"\xb1\x01\n\x08Response\x12\x0e\n\x06rfw_id\x18\x01 \x01(\t\x12\x15\n\rlast_batch_id\x18\x02 \x01(\t\x12\x16\n\x0erequested_data\x18\x03 \x03(\x05\x12\x0b\n\x03\x61vg\x18\x04 \x01(\x02\x12\x0b\n\x03max\x18\x05 \x01(\x02\x12\x0b\n\x03min\x18\x06 \x01(\x02\x12\x0b\n\x03std\x18\x07 \x01(\x02\x12\x0b\n\x03p10\x18\x08 \x01(\x02\x12\x0b\n\x03p50\x18\t \x01(\x02\x12\x0b\n\x03p95\x18\n \x01(\x02\x12\x0b\n\x03p99\x18\x0b \x01(\x02\x32\x46\n\x08\x41nalyser\x12:\n\x0bSendRequest\x12\x14.analyse.RequestInfo\x1a\x11.analyse.Response(\x01\x30\x01\x62\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'server_pb2', globals())
@@ -21,9 +21,9 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   _REQUESTINFO._serialized_start=26
-  _REQUESTINFO._serialized_end=162
-  _REQUESTREPLY._serialized_start=164
-  _REQUESTREPLY._serialized_end=260
-  _ANALYSER._serialized_start=262
-  _ANALYSER._serialized_end=336
+  _REQUESTINFO._serialized_end=179
+  _RESPONSE._serialized_start=182
+  _RESPONSE._serialized_end=359
+  _ANALYSER._serialized_start=361
+  _ANALYSER._serialized_end=431
 # @@protoc_insertion_point(module_scope)
