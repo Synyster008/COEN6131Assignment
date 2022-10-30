@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package analyse;
+
+//The analyse service description
+service Analyser {
+  //Both Streaming
+	rpc SendRequest (stream RequestInfo) returns (stream RequestReply);
+}
+
+// The request message containing metrics
+message RequestInfo {
+  string rfw_id = 1;
+  string benchmark_type = 2;
+  string workload_metric = 3;
+  string batch_unit = 4;
+  string batch_size = 5;
+  string batch_id = 6;
+}
+
+// The response message containing reply with analysis
+message RequestReply{
+  string rfw_id = 1;
+  string last_batch_id = 2;
+  string requested_data = 3;
+  string analytics = 4;
+}
